@@ -1,0 +1,36 @@
+
+% ? The state-of-the-art should show the reader a broad overview of techniques available and how they are related to one another in a hierarchical way like a mindmap. Describe the methods briefly and explain the weaknesses and strengths of the methods and how you want to use them to solve your problem.
+
+\section{Motivation and State of the Art}
+
+Representative datasets for Text-to-SQL include the WikiSQL \cite{zhong_seq2sql_2017} dataset and the SPIDER \cite{yu_spider_2019} dataset, which contains more complex SQL queries. 
+% We will also take a shallow look at older datasets and why they are not in use anymore in Text-to-SQL studies.
+The former case consists of Single Table - Multiple Question and the latter case Multiple Table - Multiple Question. The top models available for Text-To-SQL will be studied, and the implementation of a couple of currently best methods will be reviewed and discussed in this study. 
+
+In this thesis, we will review the Text-to-SQL Challenges and datasets and structure of existing datasets and difference between them. Datasets to be covered are:
+\begin{itemize}
+\item ATIS
+\item GeoQuery
+\item IMDb
+\item Advising
+\item WikiSQL
+\item Spider
+\end{itemize}
+% Furthermore, Text-to-SQL models and techniques represented in the SPIDER challenge will be studied and evaluated. 
+The research section will assess the best state-of-the-art research in this field, the T5\cite{raffel_exploring_2020} Transformer with PICARD\cite{scholak_picard_2021} (2021), RAT-SQL\cite{wang_rat-sql_2021} (2019), BRIDGE v1 and v2\cite{lin_bridging_2020} with BERT, HydraNet\cite{lyu_hybrid_2020} (2020), some novel methods in recent years, and some older models like Seq2SQL\cite{zhong_seq2sql_2017} (2017) and SQLova\cite{hwang_comprehensive_2019} (2019).
+
+\begin{itemize}
+\item Seq2SQL and SQLNet will perform encoding using LSTM/Bi-LSTM and decode using classification and Pointer Network. 
+\item SQLova and HydraNet encode natural language queries through a language model and decode them through the Natural Language-to-SQL layer, converting them to SQL grammars. Going a little further, SQLova was the first to use a language model as an encoder, encode questions and columns, and then predict queries. 
+\item HydraNet uses BERT's token to rank columns one by one to fill in the slots of the SQL Query statement. Brief description of the BERT will be given in our final report.
+\item Since the SPIDER dataset used for RAT-SQL and BRIDGE is a Multi-Table, it is necessary to understand the Schema's relationship to the question and its internal relationships, for which Schema Linking and Encoding are applied, and decoders such as SemQL are utilized. 
+\item RAT SQL reflects the schema information into the encoding and decoding with SemQL, including the relationships extracted from the question-scheme contextualized graph in Self-Attention. 
+\item BRIDGE achieves Schema Linking by including the Schema's Table and Column Name and Value in the Encoding and utilizes the Pointer Generator Network as the Decoder.
+\newpage
+\item PICARD proposes a new method for simple and effective constrained decoding with large pre-trained language models. 
+On both the SPIDER cross-domain and cross-database Text-to-SQL dataset and the CoSQL SQL-grounded dialog state tracking dataset, we find that the PICARD decoding method not only significantly improves the performance of fine-tuned unmodified T5 models but it also lifts a T5-3B model to state-of-the-art results on the established exact-match and execution accuracy metrics.
+\end{itemize}
+
+After reviewing research papers of these models, we will study implementation steps of these models. And at last, we will use our private dataset to evaluate the accuracy of each models for our data and if they are usable and reliable enough for our usage. 
+
+Most of these studies have excellent documentation regarding their implantation. Execution of these studies will be documented and published on Github. Nonetheless, In case of old and impractical implementation instructions, we will skip the implementation and continue with the top models available.
