@@ -1,22 +1,15 @@
-\makeatletter
-\def\@seccntformat#1{%
-  \expandafter\ifx\csname c@#1\endcsname\c@section\else
-  \csname the#1\endcsname\quad
-  \fi}
-\makeatother
+% \makeatletter
+% \def\@seccntformat#1{%
+%   \expandafter\ifx\csname c@#1\endcsname\c@section\else
+%     \csname the#1\endcsname\quad
+%   \fi}
+% \makeatother
 
-\include{inc/intro.tex}
+\input{inc/intro}
 \newpage
-
-\include{inc/Motivation.tex}
-\include{inc/models/SQLNet.tex}
-\include{inc/models/SyntaxSQLNet.tex}
-\include{inc/models/GrammarSQL.tex}
-\include{inc/models/IRNet.tex}
-\include{inc/models/EditSQL.tex}
-\include{inc/models/RAT-SQL.tex}
-
-\include{inc/Outline.tex}
-\include{inc/Timeline.tex}
-
+\input{inc/Motivation}
+\input{inc/Datasets}
+\input{inc/Models}
 % \newpage
+\input{inc/Outline}
+\input{inc/Timeline}

@@ -1,15 +1,14 @@
 \subsection*{GrammarSQL}
-% \cite [3] Xu, Xiaojun, Chang Liu, and Dawn Song. “Sqlnet: Generating structured queries from natural language without reinforcement learning.” arXiv preprint arXiv:1711.04436 (2017).
 
 Sequence-to-sequence models for neural text-to-SQL typically perform token-level decoding and do not consider generating SQL hierarchically.
 
 \begin{itemize}
-    \item [3] proposes a grammar-based model for reducing the complexity of text2SQL tasks involving hierarchical grammars.
+    \item \cite{xu_sqlnet_2017} proposes a grammar-based model for reducing the complexity of text2SQL tasks involving hierarchical grammars.
     \item The authors introduce schema-dependent grammar with minimal over-generation.
-    \item The grammar developed in [3] covers 98% of the instances in ATIS and SPIDER datasets.
+    \item The grammar developed in \cite{xu_sqlnet_2017} covers 98\% of the instances in ATIS and SPIDER datasets.
 \end{itemize}
 
-\textbf{SQL Grammar}
+\subsubsection*{SQL Grammar}
 
 \begin{itemize}
     \item The shallow parsing expression grammar aims to capture as little SQL as possible to cover most instances in the dataset.
@@ -17,7 +16,7 @@ Sequence-to-sequence models for neural text-to-SQL typically perform token-level
     \item They use runtime constraints during decoding to ensure that only valid programs can be used to join different tables in DB together using a foreign key.
 \end{itemize}
 
-\textbf{Few details on the proposed model}
+\subsubsection*{Few details on the proposed model}
 
 \begin{itemize}
     \item As an input, the proposed model takes an utterance of natural language, a database, and grammar about that utterance.
@@ -35,4 +34,4 @@ Sequence-to-sequence models for neural text-to-SQL typically perform token-level
 \end{figure}
 
 
-On ATIS and SPIDER datasets, the GrammarSQL model was evaluated. By 14%, it outperformed SyntaxSQLNet, the previous SOTA model.
+On ATIS and SPIDER datasets, the GrammarSQL model was evaluated. By 14\%, it outperformed SyntaxSQLNet, the previous SOTA model.

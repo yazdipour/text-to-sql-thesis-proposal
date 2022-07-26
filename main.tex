@@ -1,4 +1,5 @@
-\documentclass[headsepline,footsepline,11pt]{report}
+\documentclass[a4paper,fleqn, 12pt]{report}
+% headsepline,footsepline, 
 
 \usepackage[breaklinks,colorlinks=true,citecolor=blue,linkcol or=blue,urlcolor=blue,filecolor=blue]{hyperref}
 \usepackage{times}
@@ -26,6 +27,7 @@
 % \chead{\headmark}
 % \ifoot{\invnr} 
 % \pagestyle{scrheadings}
+\usepackage{layout}
 
 % --------------------
 
@@ -38,12 +40,10 @@
 \setlength{\textheight}{240mm}
 \setlength{\textwidth}{160mm}
 \setlength{\voffset}{-2cm}
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{20pt}
 \setlength{\parskip}{6pt}
 
 \input{inc/profile.tex}
-
-
 
 \usepackage{blindtext}%
 \usepackage{etoolbox}%
@@ -63,5 +63,4 @@
 \bibliographystyle{alpha}
 \bibliography{litDB}
 
-\end{itemize}
 \end{document}
